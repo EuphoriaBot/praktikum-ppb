@@ -1,219 +1,264 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // Widget MaterialApp: menjadi pembungkus utama aplikasi Flutter.
+  // Widget MaterialApp ini sebagai pembungkus nya, jadi semuanya masuk di dalam sini
   runApp(
     MaterialApp(
       title: 'My Little Garden',
       debugShowCheckedModeBanner: false,
 
-      // Widget Scaffold: menjadi struktur dasar halaman aplikasi.
+      // Widget Scaffold ini ibaratnya sebagai kerangka rumahnya lah, nanti bakal diisi elemen elemen UI
       home: Scaffold(
-        backgroundColor: const Color(0xFFF7F8F4),
+        backgroundColor: const Color(0xFFF6F7F2),
 
-        // Widget SafeArea: menjaga isi aplikasi agar tidak tertutup area sistem.
+        // Widget SafeArea ini fungsinya agar memastikan childnya tidak tertutup di area yang tertutup oleh perangkat
         body: SafeArea(
-          // Widget SingleChildScrollView: membuat halaman dapat di-scroll.
+          // Widget SingleChildScrollView agar halaman dapat di scroll
           child: SingleChildScrollView(
-            // Widget Padding: memberi jarak pada sisi halaman.
+            // Widget Padding untuk memberi ruang antar child
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 20),
 
-              // Widget Column: menyusun seluruh isi homepage secara vertikal.
+              // Widget Column agar widget nya bisa vertikal
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Widget Row: menyusun nama aplikasi dan icon secara horizontal.
+                  // Widget Row isinya untuk nama aplikasi dan icon, biar bisa horizontal juga
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Widget Column: menyusun teks nama aplikasi dan subtitle.
+                      // Widget Column ini isinya nama aplikasi dan subtitle
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Widget Text: menampilkan nama aplikasi.
+                          // Widget Text untuk nampilin teks dengan style style nya
                           Text(
-                            'My Little Garden',
+                            'Crazy Dave Garden',
                             style: TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFF263B2D),
+                              color: Color(0xFF21382A),
                             ),
                           ),
 
-                          // Widget SizedBox: memberi jarak vertikal.
-                          SizedBox(height: 4),
-
-                          // Widget Text: menampilkan subtitle aplikasi.
-                          Text(
-                            'Plant Care',
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: Color(0xFF879087),
-                            ),
-                          ),
+                          // Widget SizedBox buat kasih jarak dikit
+                          SizedBox(height: 3),
                         ],
                       ),
 
-                      // Widget Container: menjadi tempat icon tanaman.
-                      Container(
-                        padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFE3EEE5),
-                          borderRadius: BorderRadius.circular(14),
-                        ),
+                      // Widget ClipRRect biar headernya ini sudut nya agak melengkung
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
 
-                        // Widget Icon: menampilkan icon tanaman.
-                        child: Icon(
-                          Icons.local_florist,
-                          size: 28,
-                          color: Color(0xFF456B50),
+                        // Widget Image untuk menampilkan gambar
+                        child: Image.asset(
+                          '../assets/images/CrazyDave.webp',
+                          width: 52,
+                          height: 52,
+                          fit: BoxFit.cover,
                         ),
                       ),
                     ],
                   ),
 
-                  // Widget SizedBox: memberi jarak vertikal.
-                  SizedBox(height: 32),
+                  // Widget SizedBox juga kasih jarak
+                  SizedBox(height: 24),
 
-                  // Widget Text: menampilkan sapaan pengguna.
-                  Text(
-                    'Good morning!',
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF263B2D),
+                  // Widget Container sebagai tempat pembungkus agar nanti bisa didekorasi di dalamnya
+                  Container(
+                    padding: const EdgeInsets.all(22),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF355B43),
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+
+                    // Widget Row untuk menyusun tulisan dan icon secara horizontal
+                    child: Row(
+                      children: [
+                        // Widget Expanded membuat tulisan agar expand ke ruangannya
+                        Expanded(
+                          // Widget Column menyusun isi cardnya secara vertikal
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              // Widget Text untuk nampilin teks dengan style style nya
+                              Text(
+                                'Nice Garden',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+
+                              // Widget SizedBox untuk beri jarak
+                              SizedBox(height: 10),
+
+                              // Widget Text untuk nampilin teks dengan style style nya
+                              Text(
+                                '2 plants need your care today',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Color(0xFFD5E2D7),
+                                ),
+                              ),
+
+                              // Widget SizedBox untuk memberi jarak vertikal
+                              SizedBox(height: 18),
+
+                              // Widget Container sebagai tempat pembungkus agar nanti bisa didekorasi di dalamnya
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 14,
+                                  vertical: 8,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFF1E9C9),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+
+                                // Widget Text untuk nampilin teks dengan style style nya
+                                child: Text(
+                                  'Today\'s Focus',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xFF42523B),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        // Widget SizedBox agar memberi jarak
+                        SizedBox(width: 12),
+
+                        // Widget ClipRRect agar sudut gambar menjadi melengkung
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(22),
+
+                          // Widget Image untuk nampilin gambar
+                          child: Image.asset(
+                            '../assets/images/Greenhouse_pexels.jpg',
+                            width: 100,
+                            height: 110,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
 
-                  // Widget SizedBox: memberi jarak vertikal.
-                  SizedBox(height: 6),
+                  // Widget SizedBox untuk memberi jarak
+                  SizedBox(height: 22),
 
-                  // Widget Text: menampilkan keterangan singkat.
-                  Text(
-                    'Let\'s take care of your plants today.',
-                    style: TextStyle(fontSize: 15, color: Color(0xFF7D867E)),
-                  ),
-
-                  // Widget SizedBox: memberi jarak vertikal.
-                  SizedBox(height: 24),
-
-                  // Widget Container: menjadi pembungkus kolom pencarian.
+                  // Widget Container sebagai tempat pembungkus agar nanti bisa didekorasi di dalamnya
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border.all(color: const Color(0xFFE2E7E1)),
-                      borderRadius: BorderRadius.circular(14),
+                      border: Border.all(color: const Color(0xFFE0E5DE)),
+                      borderRadius: BorderRadius.circular(15),
                     ),
 
-                    // Widget TextField: menjadi kolom pencarian tanaman.
+                    // Widget TextField: digunakan untuk mencari tanaman.
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: 'Search your plants',
-                        hintStyle: TextStyle(color: Color(0xFFA0A6A0)),
+                        hintStyle: TextStyle(color: Color(0xFFA1A7A1)),
 
-                        // Widget Padding: memberi jarak pada icon pencarian.
+                        // Mengatur posisi teks agar lebih pas di tengah secara vertikal.
+                        contentPadding: EdgeInsets.symmetric(vertical: 18),
+
+                        // Menghilangkan garis bawah bawaan TextField.
+                        border: InputBorder.none,
+
+                        // Widget Padding: memberi jarak pada icon search.
                         suffixIcon: Padding(
                           padding: const EdgeInsets.only(right: 4),
 
                           // Widget Icon: menampilkan icon pencarian.
-                          child: Icon(
-                            Icons.search,
-                            size: 24,
-                            color: Color(0xFF6F796F),
-                          ),
+                          child: Icon(Icons.search, color: Color(0xFF607065)),
                         ),
                       ),
                     ),
                   ),
 
                   // Widget SizedBox: memberi jarak vertikal.
-                  SizedBox(height: 30),
+                  SizedBox(height: 28),
 
-                  // Widget Row: menyusun judul My Garden dan keterangannya.
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Widget Text: menampilkan judul My Garden.
-                      Text(
-                        'My Garden',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF263B2D),
-                        ),
-                      ),
-
-                      // Widget Text: menampilkan keterangan koleksi tanaman.
-                      Text(
-                        'Overview',
-                        style: TextStyle(
-                          fontSize: 13,
-                          color: Color(0xFF6B806F),
-                        ),
-                      ),
-                    ],
+                  // Widget Text: menampilkan judul Garden Overview.
+                  Text(
+                    'Garden Overview',
+                    style: TextStyle(
+                      fontSize: 19,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF21382A),
+                    ),
                   ),
 
                   // Widget SizedBox: memberi jarak vertikal.
-                  SizedBox(height: 15),
+                  SizedBox(height: 14),
 
-                  // Widget Row: menyusun dua kartu ringkasan secara horizontal.
+                  // Widget Row: menyusun dua kartu Garden Overview secara horizontal.
                   Row(
                     children: [
-                      // Widget Expanded: membuat kartu pertama mengisi ruang tersedia.
+                      // Widget Expanded: membuat kartu My Plants mengisi ruang yang tersedia.
                       Expanded(
-                        // Widget Container: membuat kartu jumlah tanaman.
+                        // Widget Container: membuat kartu overview tanaman.
                         child: Container(
-                          padding: const EdgeInsets.all(18),
+                          height: 120,
+                          padding: const EdgeInsets.symmetric(horizontal: 18),
                           decoration: BoxDecoration(
-                            color: const Color(0xFFE7F0E8),
-                            borderRadius: BorderRadius.circular(16),
+                            color: const Color(0xFFDDEADD),
+                            borderRadius: BorderRadius.circular(18),
+                            border: Border.all(color: const Color(0xFFD0DFD1)),
                           ),
 
-                          // Widget Column: menyusun isi kartu secara vertikal.
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          // Widget Row: menyusun icon, angka, dan labemainAxisAlignment: MainAxisAlignment.center,l secara horizontal.
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              // Widget Container: menjadi pembungkus icon tanaman.
+                              // Widget Container: membuat kotak icon tanaman.
                               Container(
-                                padding: const EdgeInsets.all(9),
+                                padding: const EdgeInsets.all(13),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(14),
                                 ),
 
                                 // Widget Icon: menampilkan icon tanaman.
                                 child: Icon(
                                   Icons.eco,
-                                  size: 25,
-                                  color: Color(0xFF456B50),
+                                  size: 27,
+                                  color: Color(0xFF42694D),
                                 ),
                               ),
 
-                              // Widget SizedBox: memberi jarak vertikal.
-                              SizedBox(height: 18),
+                              // Widget SizedBox: memberi jarak horizontal.
+                              SizedBox(width: 14),
 
                               // Widget Text: menampilkan jumlah tanaman.
                               Text(
                                 '5',
                                 style: TextStyle(
-                                  fontSize: 27,
+                                  fontSize: 28,
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFF263B2D),
+                                  color: Color(0xFF21382A),
                                 ),
                               ),
 
-                              // Widget SizedBox: memberi jarak vertikal.
-                              SizedBox(height: 3),
+                              // Widget SizedBox: memberi jarak horizontal.
+                              SizedBox(width: 12),
 
-                              // Widget Text: menampilkan keterangan tanaman.
+                              // Widget Text: menampilkan label tanaman.
                               Text(
                                 'My Plants',
                                 style: TextStyle(
-                                  fontSize: 14,
-                                  color: Color(0xFF667068),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFF415648),
                                 ),
                               ),
                             ],
@@ -221,61 +266,65 @@ void main() {
                         ),
                       ),
 
-                      // Widget SizedBox: memberi jarak horizontal antar kartu.
+                      // Widget SizedBox: memberi jarak antara kedua kartu.
                       SizedBox(width: 14),
 
-                      // Widget Expanded: membuat kartu kedua mengisi ruang tersedia.
+                      // Widget Expanded: membuat kartu Care Tasks mengisi ruang yang tersedia.
                       Expanded(
-                        // Widget Container: membuat kartu tugas perawatan.
+                        // Widget Container: membuat kartu overview tugas.
                         child: Container(
-                          padding: const EdgeInsets.all(18),
+                          height: 120,
+                          padding: const EdgeInsets.symmetric(horizontal: 18),
                           decoration: BoxDecoration(
-                            color: const Color(0xFFF1EEDF),
-                            borderRadius: BorderRadius.circular(16),
+                            color: const Color(0xFFF0E8CE),
+                            borderRadius: BorderRadius.circular(18),
+                            border: Border.all(color: const Color(0xFFE5DDBF)),
                           ),
 
-                          // Widget Column: menyusun isi kartu secara vertikal.
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          // Widget Row: menyusun icon, angka, dan label secara horizontal.
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              // Widget Container: menjadi pembungkus icon air.
+                              // Widget Container: membuat kotak icon perawatan.
                               Container(
-                                padding: const EdgeInsets.all(9),
+                                padding: const EdgeInsets.all(13),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(14),
                                 ),
 
                                 // Widget Icon: menampilkan icon air.
                                 child: Icon(
                                   Icons.water_drop,
-                                  size: 25,
-                                  color: Color(0xFF607B68),
+                                  size: 27,
+                                  color: Color(0xFF68765C),
                                 ),
                               ),
 
-                              // Widget SizedBox: memberi jarak vertikal.
-                              SizedBox(height: 18),
+                              // Widget SizedBox: memberi jarak horizontal.
+                              SizedBox(width: 14),
 
                               // Widget Text: menampilkan jumlah tugas.
                               Text(
                                 '2',
                                 style: TextStyle(
-                                  fontSize: 27,
+                                  fontSize: 28,
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFF263B2D),
+                                  color: Color(0xFF21382A),
                                 ),
                               ),
 
-                              // Widget SizedBox: memberi jarak vertikal.
-                              SizedBox(height: 3),
+                              // Widget SizedBox: memberi jarak horizontal.
+                              SizedBox(width: 12),
 
-                              // Widget Text: menampilkan keterangan tugas.
+                              // Widget Text: menampilkan label tugas.
                               Text(
-                                'Tasks Today',
+                                'Care Tasks',
                                 style: TextStyle(
-                                  fontSize: 14,
-                                  color: Color(0xFF667068),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFF565B45),
                                 ),
                               ),
                             ],
@@ -286,70 +335,68 @@ void main() {
                   ),
 
                   // Widget SizedBox: memberi jarak vertikal.
-                  SizedBox(height: 32),
+                  SizedBox(height: 30),
 
-                  // Widget Row: menyusun judul Today's Care dan keterangan.
+                  // Widget Row: menyusun judul Featured Plant dan statusnya.
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Widget Text: menampilkan judul Today's Care.
+                      // Widget Text: menampilkan judul Featured Plant.
                       Text(
-                        'Today\'s Care',
+                        'Featured Plant',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 19,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF263B2D),
+                          color: Color(0xFF21382A),
                         ),
                       ),
 
-                      // Widget Text: menampilkan jumlah aktivitas.
+                      // Widget Text: menampilkan jenis tanaman.
                       Text(
-                        '2 tasks',
+                        'Indoor',
                         style: TextStyle(
-                          fontSize: 13,
-                          color: Color(0xFF6B806F),
+                          fontSize: 12,
+                          color: Color(0xFF57705E),
                         ),
                       ),
                     ],
                   ),
 
                   // Widget SizedBox: memberi jarak vertikal.
-                  SizedBox(height: 15),
+                  SizedBox(height: 14),
 
-                  // Widget Container: membuat kartu perawatan Monstera.
+                  // Widget Container: membuat kartu tanaman unggulan.
                   Container(
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(19),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border.all(color: const Color(0xFFE3E7E2)),
-                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(color: const Color(0xFFE0E5DE)),
+                      borderRadius: BorderRadius.circular(20),
                     ),
 
-                    // Widget Row: menyusun icon dan informasi Monstera.
+                    // Widget Row: menyusun icon dan informasi tanaman.
                     child: Row(
                       children: [
-                        // Widget Container: menjadi pembungkus icon Monstera.
-                        Container(
-                          padding: const EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFE7F0E8),
-                            borderRadius: BorderRadius.circular(13),
-                          ),
+                        // Widget Container: menjadi area icon tanaman.
+                        // Widget ClipRRect: membuat sudut gambar menjadi melengkung.
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(16),
 
-                          // Widget Icon: menampilkan icon tanaman.
-                          child: Icon(
-                            Icons.local_florist,
-                            size: 28,
-                            color: Color(0xFF456B50),
+                          // Widget Image: menampilkan foto tanaman Monstera.
+                          child: Image.asset(
+                            '../assets/images/Monstera_pexels.jpg',
+                            width: 90,
+                            height: 90,
+                            fit: BoxFit.cover,
                           ),
                         ),
 
                         // Widget SizedBox: memberi jarak horizontal.
-                        SizedBox(width: 15),
+                        SizedBox(width: 17),
 
-                        // Widget Expanded: membuat informasi tanaman mengisi sisa ruang.
+                        // Widget Expanded: membuat informasi memenuhi ruang.
                         Expanded(
-                          // Widget Column: menyusun informasi tanaman secara vertikal.
+                          // Widget Column: menyusun informasi tanaman.
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -357,149 +404,182 @@ void main() {
                               Text(
                                 'Monstera',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 19,
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFF263B2D),
+                                  color: Color(0xFF21382A),
                                 ),
                               ),
 
                               // Widget SizedBox: memberi jarak vertikal.
-                              SizedBox(height: 5),
+                              SizedBox(height: 4),
 
-                              // Widget Text: menampilkan jenis perawatan.
+                              // Widget Text: menampilkan kategori tanaman.
                               Text(
-                                'Watering',
+                                'Indoor Plant',
                                 style: TextStyle(
                                   fontSize: 13,
-                                  color: Color(0xFF828982),
+                                  color: Color(0xFF899089),
                                 ),
+                              ),
+
+                              // Widget SizedBox: memberi jarak vertikal.
+                              SizedBox(height: 13),
+
+                              // Widget Row: menyusun icon air dan jadwal.
+                              Row(
+                                children: [
+                                  // Widget Icon: menampilkan icon air.
+                                  Icon(
+                                    Icons.water_drop,
+                                    size: 17,
+                                    color: Color(0xFF52735A),
+                                  ),
+
+                                  // Widget SizedBox: memberi jarak horizontal.
+                                  SizedBox(width: 5),
+
+                                  // Widget Text: menampilkan jadwal penyiraman.
+                                  Text(
+                                    'Water today',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color(0xFF52735A),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
-                        ),
-
-                        // Widget Column: menyusun status perawatan.
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            // Widget Icon: menampilkan icon air.
-                            Icon(
-                              Icons.water_drop,
-                              size: 19,
-                              color: Color(0xFF567B62),
-                            ),
-
-                            // Widget SizedBox: memberi jarak vertikal.
-                            SizedBox(height: 5),
-
-                            // Widget Text: menampilkan waktu perawatan.
-                            Text(
-                              'Today',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Color(0xFF567B62),
-                              ),
-                            ),
-                          ],
                         ),
                       ],
                     ),
                   ),
 
-                  // Widget SizedBox: memberi jarak vertikal antar kartu.
-                  SizedBox(height: 12),
+                  // Widget SizedBox: memberi jarak vertikal.
+                  SizedBox(height: 30),
 
-                  // Widget Container: membuat kartu perawatan Basil.
+                  // Widget Text: menampilkan judul Today's Care.
+                  Text(
+                    'Today\'s Care',
+                    style: TextStyle(
+                      fontSize: 19,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF21382A),
+                    ),
+                  ),
+
+                  // Widget SizedBox: memberi jarak vertikal.
+                  SizedBox(height: 14),
+
+                  // Widget Container: membuat kartu care pertama.
                   Container(
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border.all(color: const Color(0xFFE3E7E2)),
                       borderRadius: BorderRadius.circular(16),
                     ),
 
-                    // Widget Row: menyusun icon dan informasi Basil.
+                    // Widget Row: menyusun isi kartu secara horizontal.
                     child: Row(
                       children: [
-                        // Widget Container: menjadi pembungkus icon Basil.
-                        Container(
-                          padding: const EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFF1EEDF),
-                            borderRadius: BorderRadius.circular(13),
-                          ),
+                        // Widget ClipRRect: membuat sudut gambar menjadi melengkung.
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
 
-                          // Widget Icon: menampilkan icon daun.
-                          child: Icon(
-                            Icons.eco,
-                            size: 28,
-                            color: Color(0xFF6E7958),
+                          // Widget Image: menampilkan gambar Monstera.
+                          child: Image.asset(
+                            '../assets/images/Monstera_pexels.jpg',
+                            width: 50,
+                            height: 50,
+                            fit: BoxFit.cover,
                           ),
                         ),
 
                         // Widget SizedBox: memberi jarak horizontal.
-                        SizedBox(width: 15),
+                        SizedBox(width: 13),
 
-                        // Widget Expanded: membuat informasi tanaman mengisi sisa ruang.
+                        // Widget Expanded: membuat nama tanaman mengisi ruang.
                         Expanded(
-                          // Widget Column: menyusun informasi tanaman secara vertikal.
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              // Widget Text: menampilkan nama tanaman.
-                              Text(
-                                'Basil',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFF263B2D),
-                                ),
-                              ),
-
-                              // Widget SizedBox: memberi jarak vertikal.
-                              SizedBox(height: 5),
-
-                              // Widget Text: menampilkan jenis perawatan.
-                              Text(
-                                'Watering',
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Color(0xFF828982),
-                                ),
-                              ),
-                            ],
+                          // Widget Text: menampilkan nama tanaman.
+                          child: Text(
+                            'Monstera',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF263B2D),
+                            ),
                           ),
                         ),
 
-                        // Widget Column: menyusun status perawatan.
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            // Widget Icon: menampilkan icon air.
-                            Icon(
-                              Icons.water_drop,
-                              size: 19,
-                              color: Color(0xFF7A8261),
-                            ),
-
-                            // Widget SizedBox: memberi jarak vertikal.
-                            SizedBox(height: 5),
-
-                            // Widget Text: menampilkan waktu perawatan.
-                            Text(
-                              'Tomorrow',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Color(0xFF7A8261),
-                              ),
-                            ),
-                          ],
+                        // Widget Text: menampilkan jadwal tanaman.
+                        Text(
+                          'Today',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF587361),
+                          ),
                         ),
                       ],
                     ),
                   ),
 
-                  // Widget SizedBox: memberi ruang pada bagian bawah halaman.
+                  // Widget SizedBox: memberi jarak antar kartu.
+                  SizedBox(height: 10),
+
+                  // Widget Container: membuat kartu care kedua.
+                  Container(
+                    padding: const EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+
+                    // Widget Row: menyusun isi kartu secara horizontal.
+                    child: Row(
+                      children: [
+                        // Widget Container: menjadi tempat icon tanaman.
+                        // Widget ClipRRect: membuat sudut gambar menjadi melengkung.
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+
+                          // Widget Image: menampilkan gambar Basil.
+                          child: Image.asset(
+                            '../assets/images/Basil_pexels.jpg',
+                            width: 50,
+                            height: 50,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+
+                        // Widget SizedBox: memberi jarak horizontal.
+                        SizedBox(width: 13),
+
+                        // Widget Expanded: membuat nama tanaman mengisi ruang.
+                        Expanded(
+                          // Widget Text: menampilkan nama tanaman.
+                          child: Text(
+                            'Basil',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF263B2D),
+                            ),
+                          ),
+                        ),
+
+                        // Widget Text: menampilkan jadwal tanaman.
+                        Text(
+                          'Tomorrow',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF747A5D),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // Widget SizedBox: memberi jarak pada bagian bawah halaman.
                   SizedBox(height: 30),
                 ],
               ),
